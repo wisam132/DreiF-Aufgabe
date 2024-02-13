@@ -1,0 +1,41 @@
+﻿@page
+@model WebApplication1.Pages.Mitarbeiter.projektModel
+@{
+}
+<h2>Projekt hinzufügen</h2>
+
+@if (Model.fehlerMeldung.Length > 0)
+{
+    <h2 style="color:red">@Model.fehlerMeldung</h2>
+}
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="projektname">Projekt Name:</label>
+        <input type="text" class="form-control" name="projektname" placeholder="Projekt Name: eingeben" value="@Model.mitarbeiterInfo.Projektname">
+    </div>
+    <div class="form-group">
+        <label for="startdatum">Startdatum:</label>
+        <input class="form-control" type="date" id="startdatum" name="startdatum" value="@Model.mitarbeiterInfo.Startdatum" min="2018-01-01" max="2050-12-31" />
+    </div>
+
+    <div class="form-group">
+        <label for="enddatum">Enddatum:</label>
+        <input class="form-control" type="date" id="enddatum" name="enddatum" value="@Model.mitarbeiterInfo.Enddatum" min="2018-01-01" max="2050-12-31" />
+    </div>
+
+
+    <div class="form-group">
+        <label for="mitarbeiterID">MitarbeiterID:</label>
+        <input type="text" class="form-control" name="mitarbeiterID" placeholder="MitarbeiterID: eingeben" value="@Model.mitarbeiterInfo.MitarbeiterID">
+    </div>
+
+    @if (Model.erfolgMeldung.Length > 0)
+    {
+        <h2 style="color:green">@Model.erfolgMeldung</h2>
+    }
+
+    <br />
+    <button type="submit" class="btn btn-secondary">Eingeben</button>
+</form>

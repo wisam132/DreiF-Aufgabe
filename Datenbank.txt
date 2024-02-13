@@ -1,0 +1,23 @@
+CREATE TABLE Mitarbeiter (
+    MitarbeiterID INT NOT NULL IDENTITY PRIMARY KEY,
+    Vorname VARCHAR(50),
+    Nachname VARCHAR(50),
+    AbteilungID INT,
+    FOREIGN KEY (AbteilungID) REFERENCES Abteilung(AbteilungID)
+);
+
+
+CREATE TABLE Abteilung (
+    AbteilungID INT NOT NULL IDENTITY PRIMARY KEY,
+    Abteilungsname VARCHAR(50)
+);
+
+CREATE TABLE Projekt (
+    ProjektID INT NOT NULL IDENTITY PRIMARY KEY,
+    Projektname VARCHAR(50),
+    Startdatum DATE,
+    Enddatum DATE,
+    MitarbeiterID INT,
+    FOREIGN KEY (MitarbeiterID) REFERENCES Mitarbeiter(MitarbeiterID)
+);
+

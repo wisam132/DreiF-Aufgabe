@@ -1,0 +1,24 @@
+﻿@page
+@model WebApplication1.Pages.Mitarbeiter.abteilungModel
+
+<h2>Abteilung hinzufügen</h2>
+
+@if (Model.fehlerMeldung.Length > 0)
+{
+    <h2 style="color:red">@Model.fehlerMeldung</h2>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="abteilungsname">Abteilungsname:</label>
+        <input type="text" class="form-control" name="abteilungsname" placeholder="Abteilungsname eingeben" value="@Model.mitarbeiterInfo.Abteilungsname">
+    </div>
+
+    @if (Model.erfolgMeldung.Length > 0)
+    {
+        <h2 style="color:green">@Model.erfolgMeldung</h2>
+    }
+
+    <br />
+    <button type="submit" class="btn btn-secondary">Eingeben</button>
+</form>

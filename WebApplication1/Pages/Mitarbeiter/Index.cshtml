@@ -1,0 +1,35 @@
+﻿@page
+@model WebApplication1.Pages.Mitarbeiter.IndexModel
+
+<table class="table">
+    <h2>Mitarbeiter Liste</h2>
+    <br />
+   
+    <thead>
+        <tr>
+            <th>MitarbeiterID</th>
+            <th>AbteilungID</th>
+            <th>Vorname</th>
+            <th>Nachname</th>
+            <th>Abteilungname</th>
+            <th>Projektname</th>
+            <th>Startdatum</th>
+            <th>Enddatum</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.mitarbeiterListe)
+        {
+            <tr>
+                <td>@item.MitarbeiterID</td>
+                <td>@item.AbteilungID</td>
+                <td>@item.Vorname</td>
+                <td>@item.Nachname</td>
+                <td>@item.Abteilungsname</td>
+                <td>@item.Projektname</td>
+                <td>@item.Startdatum</td>
+                <td>@item.Enddatum</td>
+            </tr>
+        }
+    </tbody>
+</table>
